@@ -24,12 +24,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let max_happiness = find_max_happiness(&people, &happiness_map);
     println!("Part 1 - Maximum possible happiness: {}", max_happiness);
 
-    // Part 2: Add yourself with 0 happiness scores
     let mut updated_happiness_map = happiness_map.clone();
     let me = "Me".to_string();
     let mut my_relations = HashMap::new();
 
-    // Add 0 happiness for relationships between you and everyone else
     for person in &people {
         my_relations.insert(person.clone(), 0);
         updated_happiness_map
@@ -104,4 +102,3 @@ fn find_max_happiness(
 
     max_happiness
 }
-
